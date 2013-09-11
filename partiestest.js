@@ -1,5 +1,15 @@
 // TODO: put all application specific variables here
 // nice and neat
+// more - add those as examples:
+ // assertTextExists
+ // assertTitle
+ // assertHttpStatus
+ // assertDoesntExist
+ // assertUrlMatch
+ 
+var username = 'username@example.org';
+var password = 'password';
+var meteorUrl = 'http://localhost:3000/';
 
 var casper = require('casper').create({
 // some debug info is nice during coding times
@@ -14,7 +24,7 @@ var casper = require('casper').create({
 casper.test.comment('Hang on to your heads, testing starts!');
 
 // First, let's assert we are able to access to correct Meteor app: Parties example
-casper.start('http://localhost:3000/', function() {
+casper.start(meteorUrl, function() {
     this.test.assertTitle('All Tomorrow\'s Parties', 'App title is as expected');
     this.test.comment('Taking a picture to document our success');
     this.capture('captures/01-website.png');
@@ -39,13 +49,12 @@ casper.start('http://localhost:3000/', function() {
         this.test.assertExists('#login-password', 'Password field found');
         this.test.assertExists('#login-dropdown-list', 'login dropdown list found');
         this.fillSelectors('#login-dropdown-list', {
-            '#login-email': 'username@example.org',
-            '#login-password': 'password'
+            '#login-email': username,
+            '#login-password': password
         }, true);
         this.capture('captures/02-logindata.png');
         this.click('div#login-buttons-password');
     });
-
     casper.waitForSelector('a#login-name-link', function() {
         this.test.pass('We are now logged in');
         this.capture('captures/03-loggedin.png');
@@ -53,7 +62,9 @@ casper.start('http://localhost:3000/', function() {
 
 });
 
-
 // TODO: do something with your newly created account
+// double click the map
+// this.mouseEvent('dblclick', 'selection');
+// but how to add some coordinates?
 
 casper.run();
