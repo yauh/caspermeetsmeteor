@@ -13,8 +13,8 @@ var meteorUrl = 'http://localhost:3000/';
 
 var casper = require('casper').create({
 // some debug info is nice during coding times
-    verbose: true,
-    logLevel: 'debug',
+    //verbose: true,
+    //logLevel: 'debug',
     userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
 // Casper sets the viewport quite small initially - so let's enlarge it something an average user may see
     viewportSize: {
@@ -64,7 +64,7 @@ casper.start(meteorUrl, function() {
 
 // TODO: do something with your newly created account
 // double click the map
-// this.mouseEvent('dblclick', 'selection');
+// likely using this.mouseEvent('dblclick', 'selection');
 // but how to add some coordinates?
 
 casper.run();
