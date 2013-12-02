@@ -25,39 +25,48 @@
             <section>
                 <h2>Meet Casper</h2>
                 <div>Casper extends PhantomJS and allows you to
-                    <ul><li>Automate your browser to scrape stuff</li>
+                    <ol><li>Automate your browser to scrape stuff</li>
                         <li>Test sites and apps</li>
+                    </ol>
+                </div>
+            </section>
+            <section>
+                <h2>Why should you test?</h2>
+                <div>
+                    <ul>
+                        <li>Ensure features are working as expected (i.e. find bugs)</li>
+                        <li>Reveal problems with your requirements</li>
                     </ul>
                 </div>
             </section>
-                        <section>
+            <section>
                 <h2>Why not use</h2>
                 <div><ul>
-                    <li><a href="http://docs.seleniumhq.org/">Selenium</a>?</li>
-                    <li><a href="http://arunoda.github.io/laika/">Laika</a>?</li>
-                    <li><a href="http://visionmedia.github.io/mocha/">Mocha</a>?</li>
-                    <li><a href="http://rtd.xolv.io/">RTD - The Meteor Test Runner</a>?</li>
+                    
                 </ul></div>
             </section>
             <section>
                 <section>
+                    <h2>Installing CasperJS</h2>
+                    <div><ul>
+                        <li>Requires PhantomJS</li>
+                    </ul></div>
+                </section>
+               </section>
+            <section>
+                <section>
                     <h2>Casper</h2>
                     <div><ul>
-                        <li>PhantomJs is a testing & navigation</li>
-<li>based on PhantomJs</li>
-<li>It can create Jenkins Compatible JUnit XML</li>
+                        <li>CasperJS is a testing & navigation framework</li>
+                        <li>based on PhantomJs</li>
+                        <li>It can create Jenkins Compatible JUnit XML</li>
                     </ul></div>
                 </section>
                 <section>
-                    <h2>A capser skeleton</h2>
+                    <h2>A casper skeleton</h2>
                     <div>
-                        <pre><code>
-
+                        <pre><code data-trim class="javascript">
 var meteorUrl = 'http://localhost:3000/';
-
-var casper = require('casper').create({
-// set casper options here
-});
 
 // Start your testing
 casper.start(meteorUrl, function() {
@@ -73,65 +82,110 @@ casper.start(meteorUrl, function() {
 
 // don't forget to run your tests
 casper.run();
-                        </code></pre>
-                    </div>
-                </section>
-            </section>
-            <section>
-                <h2>Why should you test?</h2>
-                <div>
-                    <ul>
-                        <li>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-             <section>
-                <h2>How to use Casper</h2>
-                <div>Using Casper is simple
-                    <ul>
-                        <li>Grab PhantomJS
-                        </li>
-                        <li>Grab Casper version 1.1 (beta)
-                        </li>
-                        <li>Write some code</li>
-                         <li>Execute <pre><code>$ casperjs test mytest.js</code></pre></li>
-                    </ul>
-                </div>
-            </section>
-            <section>
-                <h2>Hands on</h2>
-                <div>Let's do some testing
-                    <ul>
-                        <li>Gentle introduction - simpletest.js
-                        </li>
-                        <li>Basic functionality - todostest.j
-                        </li>
-                        <li>Logging in - partiestest.js</li>
-                    </ul>
-                </div>
-            </section>
-            <section>
-                <h2>Where to go from here?</h2>
-                <div><ul>
-<li><a href="http://dalekjs.com/">Dalek.js</a></li>
-<li><a href="http://zombie.labnotes.org/">Zombie.js</a></li>
-<li><a href="http://meteorhacks.com/continuos-integration-for-meteor-apps.html">Continuous Integration</a> using <a href="http://arunoda.github.io/laika/continuous-integration.html">Laika</a></li>
-                </ul></div>
-            </section>
+            </code></pre>
         </div>
+    </section>
+</section>
 
-
+<section>
+    <section>
+        <h2>How to use Casper</h2>
+    <div>Using Casper is simple
+        <ul>
+            <li>Grab PhantomJS
+            </li>
+            <li>Grab Casper version 1.1 (beta)
+            </li>
+            <li>Write some code</li>
+            <li>Execute <pre><code>$ casperjs test mytest.js</code></pre></li>
+        </ul>
     </div>
+     </section>
+     <section>
+                    <h2>Install CasperJS using HomeBrew (OS X)</h2>
+                    <div>
+                        <pre><code class="bash">
+                            $ brew install casperjs --devel</code></pre>
+        </div>
+    </section>
+</section>
+<section>
+    <h2>Hands on</h2>
+    <div><h3>Let's do some testing</h3>
+        <ul>
+            <li>Gentle introduction - simpletest.js
+            </li>
+            <li>Basic functionality - todostest.js
+            </li>
+            <li>Logging in - partiestest.js</li>
+        </ul>
+    </div>
+</section>
+<section>
+    <h2>Perhaps you need some alternative choices?</h2>
+    <div><ul>
+        <li><a href="http://dalekjs.com/">Dalek.js</a></li>
+        <li><a href="http://zombie.labnotes.org/">Zombie.js</a></li>
+        <li><a href="http://seleniumhq.org/">Selenium</a></li>
+        <li><a href="http://arunoda.github.io/laika/">Laika</a></li>
+        <li><a href="http://visionmedia.github.io/mocha/">Mocha</a></li>
+        <li><a href="http://rtd.xolv.io/">RTD - The Meteor Test Runner</a></li>
+    </ul></div>
+</section>
+</div>
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.min.js"></script>
 
-    <script>
+</div>
 
-    Reveal.initialize();
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
 
-    </script>
+<script>
+
+Reveal.initialize({
+    dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+      
+        // Syntax highlight for <code> elements
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+    ],
+    // Display controls in the bottom right corner
+    controls: true,
+
+    // Display a presentation progress bar
+    progress: true,
+
+    // Push each slide change to the browser history
+    history: false,
+
+    // Enable keyboard shortcuts for navigation
+    keyboard: true,
+
+    // Loop the presentation
+    loop: false,
+
+    // Number of milliseconds between automatically proceeding to the 
+    // next slide, disabled when set to 0
+    autoSlide: 0,
+
+    // Enable slide navigation via mouse wheel
+    mouseWheel: true,
+
+    // Apply a 3D roll to links on hover
+    rollingLinks: true,
+
+    // UI style
+    theme: 'default', // default/neon/beige
+
+    // Transition style
+    transition: 'default' // default/cube/page/concave/linear(2d)
+});
+
+
+</script>
 
 </body>
 </html>

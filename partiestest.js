@@ -11,16 +11,6 @@ var username = 'username@example.org';
 var password = 'password';
 var meteorUrl = 'http://localhost:3000/';
 
-var casper = require('casper').create({
-// some debug info is nice during coding times
-    //verbose: true,
-    //logLevel: 'debug',
-    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
-// Casper sets the viewport quite small initially - so let's enlarge it something an average user may see
-    viewportSize: {
-        width: 1280,
-        height: 576
-    }});
 casper.test.comment('Hang on to your heads, testing starts!');
 
 // First, let's assert we are able to access to correct Meteor app: Parties example
