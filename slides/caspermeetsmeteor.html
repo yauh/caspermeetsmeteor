@@ -23,6 +23,23 @@
                 </div>
             </section>
             <section>
+                <h2>Put your app to the test</h2>
+                <div>
+                    <p>
+                        Functional tests focus on user experience and ensure features are working as expected (i.e. <strong>find bugs</strong>). Also they <strong>reveal problems with your requirements</strong>.
+                    </p>
+                </div>
+            </section>
+            <section>
+                <h2>Challenges in testing dynamic web apps</h2>
+                <div>
+                    <ul><li>DOM is not ready on initial load</li>
+                        <li>site elements are constantly changing</li>
+                        <li>timinig of steps is critical to successful testing</li>
+                    </ul>
+                </div>
+            </section>
+            <section>
                 <h2>Meet Casper</h2>
                 <div>Casper extends PhantomJS and allows you to
                     <ol><li>Automate your browser to scrape stuff</li>
@@ -31,16 +48,7 @@
                 </div>
             </section>
             <section>
-                <h2>Why should you test?</h2>
-                <div>
-                    <ul>
-                        <li>Ensure features are working as expected (i.e. find bugs)</li>
-                        <li>Reveal problems with your requirements</li>
-                    </ul>
-                </div>
-            </section>
-            <section>
-                <h2>Why not use</h2>
+                <h2>Some other content here</h2>
                 <div><ul>
                     
                 </ul></div>
@@ -94,10 +102,10 @@ casper.run();
         <ul>
             <li>Grab PhantomJS
             </li>
-            <li>Grab Casper version 1.1 (beta)
+            <li>Grab Casper version 1.1 (devel)
             </li>
             <li>Write some code</li>
-            <li>Execute <pre><code>$ casperjs test mytest.js</code></pre></li>
+            <li>Execute <pre><code class="bash">$ casperjs test mytest.js</code></pre></li>
         </ul>
     </div>
      </section>
@@ -178,7 +186,7 @@ Reveal.initialize({
     rollingLinks: true,
 
     // UI style
-    theme: 'default', // default/neon/beige
+    theme: 'beige', // default/neon/beige
 
     // Transition style
     transition: 'default' // default/cube/page/concave/linear(2d)
