@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="css/reveal.min.css">
     <link rel="stylesheet" href="css/theme/night.css" id="theme">
+    <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 </head>
 
 <body>
@@ -18,25 +20,31 @@
             <section>
                 <h1>Testing Meteor using Casper.js</h1>
                 <div>
-                    <img src="img/casperjs_phantomjs.jpg">
+                    <img src="img/casperjs_phantomjs.png">
                     <br>
                 </div>
             </section>
             <section>
                 <h2>Put your app to the test</h2>
                 <div>
+                    <img src="img/functional_testing.png">
                     <p>
-                        Functional tests focus on user experience and ensure features are working as expected (i.e. <strong>find bugs</strong>). Also they <strong>reveal problems with your requirements</strong>.
                     </p>
+                    <aside class="notes">
+                        Functional tests focus on user experience and ensure features are working as expected (i.e. <strong>find bugs</strong>). Also they <strong>reveal problems with your requirements</strong>.
+                    </aside>
                 </div>
             </section>
             <section>
                 <h2>Challenges in testing dynamic web apps</h2>
                 <div>
+                    <img src="img/executed91tests.png">
+                    <aside class="notes">
                     <ul><li>DOM is not ready on initial load</li>
                         <li>site elements are constantly changing</li>
                         <li>timinig of steps is critical to successful testing</li>
                     </ul>
+                    </aside>
                 </div>
             </section>
             <section>
@@ -73,7 +81,7 @@
                 <section>
                     <h2>A casper skeleton</h2>
                     <div>
-                        <pre><code data-trim class="javascript">
+                        <pre><code data-trim>
 var meteorUrl = 'http://localhost:3000/';
 
 // Start your testing
@@ -155,6 +163,7 @@ Reveal.initialize({
         // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
         { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 
+        { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
       
         // Syntax highlight for <code> elements
         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
