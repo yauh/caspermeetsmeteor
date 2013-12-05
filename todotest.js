@@ -1,59 +1,54 @@
-// var casper = require('casper').create({
-// // some debug info is nice during coding times
-// verbose: true,
-// logLevel: 'debug',
-// userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
-// // Casper sets the viewport quite small initially - so let's enlarge it something an average user may see
-// viewportSize: {
-//     width: 1280,
-//     height: 576
-// }
-// });
-casper.start('http://localhost:3000', function() {
-    this.test.assertExists("#lists", "Lists exist");
-});
+casper.test.begin('Testing Todos Example',4, function(test){
 
-casper.then(function() {
-    this.test.comment('Can we find Tesla?');
-    this.test.assertTextExists("Tesla", "Found Nikola");
-});
-
-casper.then(function() {
-    this.test.comment("Let's wait for Tesla, this time as a selector");
-    casper.waitForSelector('.todo-text', function() {
-        this.test.assertTextExists("Tesla", "Found Nikola again. Hooray!");
+    var  x = require('casper').selectXPath;
+    casper.start('http://localhost:3000', function() {
+        this.test.assertExists("#lists", "Lists exist");
     });
-});
 
-// casper.then(function() {
-//     this.test.comment("Now we'll look at the list");
-//     this.test.assertEval(function() {
-//         return __utils__.findAll("li.todo").length >= 6;
-//     }, "and we got at least six favorite scientiests");
-// });
-
-casper.then(function() {
-    this.test.comment("Adding another great scientiest");
-    casper.waitForSelector('#new-todo', function() {
-     this.fillSelectors('#new-todo-box', {
-        '#new-todo': 'Walter White',
-    }, true);
- });  
-    this.wait(1000, function() {
-        this.echo("I waited for 1 seconds");
-    }); 
-    var walterEntry = this.evaluate(function () {
-        var elements = __utils__.findAll("li.todo div.todo-text");
-        test.assertSelectorHasText('li.todo div.todo-text', 'Walter');
-        return [].map.call(elements, function(element) {
-            return element.outerHTML;
+    casper.then(function() {
+        this.test.comment("Let's wait for Tesla, he's the slowest of the bunch");
+        casper.waitForSelector('.todo-text', function() {
+            this.test.assertTextExists("Tesla", "Found Nikola. Hooray!");
         });
     });
 
-    utils.dump(walterEntry);
-    //this.clickLabel('Walter White','li.todo div.destroy');
-    //this.click('li.todo div.destroy');
+    casper.then(function() {
+        this.test.comment('Let us visit the chemists and take a picture');
+        this.click(x('//div[@class="tag-list"]/div[3]'));
+        this.viewport(1024, 768, function() {
+            this.capture('captures/chemists.png');
+        });
+        this.test.comment('Can we find Tesla? Hopefully not!');
+        this.test.assertDoesntExist("Tesla", "Nikola is not a chemist");
+    });
+
+    casper.then(function() {
+     this.test.comment("Adding another great scientiest");
+        casper.waitForSelector('#new-todo', function() {
+            this.fillSelectors('#new-todo-box', {
+                '#new-todo': 'Walter White',
+            }, true);
+        });  
+        this.waitForSelector(x("//*[contains(@class,'todo-text')][normalize-space()='Walter White']"), function() {
+            this.test.assertTextExists("Walter", "Heisenberg is in da house");
+        });
+    });
+
+    casper.then(function() {
+        this.test.comment("Let's take a break");
+        this.wait(5000, function() {
+            this.echo("I waited for 5 seconds");
+        });
+        this.test.assertTextExists("Walter", "Walter is still here, we bring in Jesse");
+    });
+
+    casper.then(function() {
+        this.test.comment("Now get rid of the teacher");
+        this.click(x("//*[contains(@class,'todo-text')][normalize-space()='Walter White']/../../div[contains(@class,'destroy')]"));
+        this.test.assertDoesntExist("Walter", "No more Walter");
+    });
+
+    casper.run(function() {
+        test.done();
+    });
 });
-
-casper.run();
-
