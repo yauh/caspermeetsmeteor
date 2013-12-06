@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/reveal.min.css">
     <link rel="stylesheet" href="css/theme/night.css" id="theme">
     <!-- For syntax highlighting -->
-        <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 </head>
 
 <body>
@@ -26,71 +26,79 @@
             </section>
             <section>
                 <section>
-                <h2>Put your app to the test</h2>
-                <div>
-                    <img src="img/functional_testing.png">
-                    <p>
-                    </p>
-                    <aside class="notes">
-                        Functional tests focus on user experience and ensure features are working as expected (i.e. <strong>find bugs</strong>). Also they <strong>reveal problems with your requirements</strong>.
-                    </aside>
-                </div>
-            </section>
-             <section>
-                <h2>Put your app to the test</h2>
-                <div>
-                    <p>
-                        Functional tests focus on user experience and ensure features are working as expected (i.e. <strong>find bugs</strong>). Also they <strong>reveal problems with your requirements</strong>.
-                    </p>
-                </div>
-            </section>
+                    <h2>Put your app to the test</h2>
+                    <div>
+                        <img src="img/functional_testing.png">
+                        <p>
+                        </p>
+                        <aside class="notes">
+                            Functional tests focus on user experience and ensure features are working as expected (i.e. <strong>find bugs</strong>). Also they <strong>reveal problems with your requirements</strong>.
+                        </aside>
+                    </div>
+                </section>
+                <section>
+                    <h2>Put your app to the test</h2>
+                    <div>
+                        <p>
+                            Functional tests focus on user experience and ensure features are working as expected (i.e. <strong>find bugs</strong>). Also they <strong>reveal problems with your requirements</strong>.
+                        </p>
+                    </div>
+                </section>
             </section>
             <section>
                 <section>
-                <h2>Challenges in testing dynamic web apps</h2>
-                <div>
-                    <img src="img/executed91tests.png">
-                </div>
-            </section>
-             <section>
-                <h2>Challenges in testing dynamic web apps</h2>
-                <div>
-                    
-                    <ul><li>DOM is not ready on initial load</li>
-                        <li>site elements are constantly changing</li>
-                        <li>timinig of steps is critical to successful testing</li>
-                    </ul>
-                </div>
-            </section>
+                    <h2>Challenges in testing dynamic web apps</h2>
+                    <div>
+                        <img src="img/executed91tests.png">
+                    </div>
+                </section>
+                <section>
+                    <h2>Challenges in testing dynamic web apps</h2>
+                    <div>
+
+                        <ul><li>DOM is not ready on initial load</li>
+                            <li>site elements are constantly changing</li>
+                            <li>elements without proper IDs are hard to address and make testing less robust</li>
+                            <li>timing of steps is critical to successful testing</li>
+                        </ul>
+                    </div>
+                </section>
             </section>
             <section>
                 <section>
-                <h2>Meet Casper</h2>
-                <div>Casper extends PhantomJS and allows you to
-                    <ol><li>Automate your browser to scrape stuff</li>
-                        <li>Test sites and apps</li>
-                    </ol>
-                </div>
-            </section>
-            <section>
-                <h2>Meet Casper</h2>
-                <div>Casper extends PhantomJS and allows you to
-                    <ol><li>Automate your browser to scrape stuff</li>
-                        <li>Test sites and apps</li>
-                    </ol>
-                </div>
-            </section>
-             <section>
-                <h2>Meet PhantomJS</h2>
-                <div><img src="img/headlessfry.png">
-                    <p>It just does.</p>
-                </div>
-            </section>
+                    <h2>Meet Casper</h2>
+                    <div><img src="img/casper.jpg">
+                    </div>
+                </section>
+                <section>
+                    <h2>What is it?</h2>
+                    <div>
+                        <ul>
+                            <li>Casper is both a testing & navigation framework</li>
+                            <li>It is based on PhantomJs</li>
+                            <li>You can easily create Jenkins Compatible JUnit XML</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Casper can be used to</h2>
+                    <div>
+                        <ol><li>automate your browser to scrape stuff</li>
+                            <li>test sites and apps (which is what we talk about now)</li>
+                        </ol>
+                    </div>
+                </section>
+                <section>
+                    <h2>Tell me more about PhantomJS</h2>
+                    <div><img src="img/headless.png">
+                        <p>(It just does, but that's not the topic of this presentation.)</p>
+                    </div>
+                </section>
             </section>
             <section>
                 <h2>Some other content here</h2>
                 <div><ul>
-                    
+
                 </ul></div>
             </section>
             <section>
@@ -100,14 +108,12 @@
                         <li>Requires PhantomJS</li>
                     </ul></div>
                 </section>
-               </section>
+            </section>
             <section>
                 <section>
                     <h2>Casper</h2>
                     <div><ul>
-                        <li>CasperJS is a testing & navigation framework</li>
-                        <li>based on PhantomJs</li>
-                        <li>It can create Jenkins Compatible JUnit XML</li>
+
                     </ul></div>
                 </section>
                 <section>
@@ -130,29 +136,34 @@ casper.start(meteorUrl, function() {
 
 // don't forget to run your tests
 casper.run();
-            </code></pre>
-        </div>
-    </section>
+</code></pre>
+</div>
+</section>
+<section>
+    <h2>Our snapshot</h2>
+    <div><img src="img/snapshot.png">
+    </div>
+</section>
 </section>
 
 <section>
     <section>
         <h2>How to use Casper</h2>
-    <div>Using Casper is simple
-        <ul>
-            <li>Grab PhantomJS
-            </li>
-            <li>Grab Casper version 1.1 (devel)
-            </li>
-            <li>Write some code</li>
-            <li>Execute <pre><code class="bash">$ casperjs test mytest.js</code></pre></li>
-        </ul>
-    </div>
-     </section>
-     <section>
-                    <h2>Install CasperJS using HomeBrew (OS X)</h2>
-                    <div>
-                        <pre><code class="bash">$ brew install casperjs --devel</code></pre>
+        <div>Using Casper is simple
+            <ul>
+                <li>Grab PhantomJS
+                </li>
+                <li>Grab Casper version 1.1 (devel)
+                </li>
+                <li>Write some code</li>
+                <li>Execute <pre><code class="bash">$ casperjs test mytest.js</code></pre></li>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <h2>Install CasperJS using HomeBrew (OS X)</h2>
+        <div>
+            <pre><code class="bash">$ brew install casperjs --devel</code></pre>
         </div>
     </section>
 </section>
@@ -195,11 +206,11 @@ Reveal.initialize({
         { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 
         { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-      
+
         // Syntax highlight for <code> elements
         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 
-    ],
+        ],
     // Display controls in the bottom right corner
     controls: true,
 

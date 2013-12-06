@@ -1,9 +1,16 @@
-var casper = require('casper').create();
-casper.start('http://localhost:3000', function() {
-	this.test.assertExists("#lists", "Lists exist");
+var meteorUrl = 'http://localhost:3000/';
+
+// Start your testing
+casper.start(meteorUrl, function() {
+    this.test.assertTitle('Todos', 'App title is as expected');
+    this.test.comment('Taking a picture to document our success');
+    this.capture('captures/snapshot.png');
+
+    casper.then(function() {
+        // do something else
+    });
+
 });
-casper.then(function() {
-	this.test.info("That's informative.");
-	this.test.comment('Just showing the difference between info and comment.');
-});
+
+// don't forget to run your tests
 casper.run();

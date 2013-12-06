@@ -1,4 +1,4 @@
-casper.test.begin('Testing Todos Example',4, function(test){
+casper.test.begin('Testing Todos Example',6, function(test){
 
     var  x = require('casper').selectXPath;
     casper.start('http://localhost:3000', function() {
@@ -14,7 +14,7 @@ casper.test.begin('Testing Todos Example',4, function(test){
 
     casper.then(function() {
         this.test.comment('Let us visit the chemists and take a picture');
-        this.click(x('//div[@class="tag-list"]/div[3]'));
+        this.click(x('//div[@class="tag-list"]/div[3]')); // TODO: This should be more robust!
         this.viewport(1024, 768, function() {
             this.capture('captures/chemists.png');
         });
@@ -37,9 +37,9 @@ casper.test.begin('Testing Todos Example',4, function(test){
     casper.then(function() {
         this.test.comment("Let's take a break");
         this.wait(5000, function() {
-            this.echo("I waited for 5 seconds");
+            this.echo("I waited long enough now");
         });
-        this.test.assertTextExists("Walter", "Walter is still here, we bring in Jesse");
+        this.test.assertTextExists("Walter", "Walter is still here, let's call Jesse"); // See how this assert does not wait?
     });
 
     casper.then(function() {
