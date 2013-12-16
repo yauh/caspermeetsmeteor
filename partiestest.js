@@ -8,7 +8,7 @@
 
 casper.test.comment('Hang on to your heads, testing starts!');
 
-casper.test.begin('Testing Parties Example',7, function(test){
+casper.test.begin('Testing Parties Example',8, function(test){
     // First, let's assert we are able to access to correct Meteor app: Parties example
     casper.start(meteorUrl, function() {
         this.test.assertTitle('All Tomorrow\'s Parties', 'App title is as expected');
@@ -51,7 +51,7 @@ casper.test.begin('Testing Parties Example',7, function(test){
      });
 
      casper.then(function() {
-         this.mouse.doubleclick(500,450);
+        this.mouse.doubleclick(500,450);
          casper.waitForSelector('div.modal', function() {
            this.test.pass('The modal shows up');
        });
@@ -59,12 +59,17 @@ casper.test.begin('Testing Parties Example',7, function(test){
 
      casper.then(function() {
          this.evaluate(function() {
-        document.querySelector('.title').value = 'Casper likes to party';
-        document.querySelector('.description').value = 'Nothing serious, it is just a test event.';
-    });
+            document.querySelector('.title').value = 'Casper likes to party';
+            document.querySelector('.description').value = 'Nothing serious, it is just a test event.';
+        });
          this.click('a.save');
      });
-
+     
+     casper.then(function() {
+       casper.waitForSelector('g.circles', function() {
+         this.test.pass('The party is save');
+     });
+   });
      casper.run(function() {
         test.done();
     });

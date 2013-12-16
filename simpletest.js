@@ -2,11 +2,11 @@ var meteorUrl = 'http://localhost:3000/';
 
 // Start your testing
 casper.start(meteorUrl, function() {
-    this.test.assertTitle('Todos', 'App title is as expected');
-    this.test.comment('Taking a picture to document our success');
-    this.capture('captures/snapshot.png');
+	this.test.assertTitle('Todos', 'App title is as expected');
+	this.test.comment('Taking a picture to document our success');
+	this.capture('captures/snapshot.png');
 
-    casper.then(function() {
+	casper.then(function() {
         // do something else
     });
 

@@ -23,16 +23,16 @@ casper.test.begin('Testing Todos Example',6, function(test){
     });
 
     casper.then(function() {
-     this.test.comment("Adding another great scientiest");
-        casper.waitForSelector('#new-todo', function() {
-            this.fillSelectors('#new-todo-box', {
-                '#new-todo': 'Walter White',
-            }, true);
-        });  
-        this.waitForSelector(x("//*[contains(@class,'todo-text')][normalize-space()='Walter White']"), function() {
-            this.test.assertTextExists("Walter", "Heisenberg is in da house");
-        });
+       this.test.comment("Adding another great scientiest");
+       casper.waitForSelector('#new-todo', function() {
+        this.fillSelectors('#new-todo-box', {
+            '#new-todo': 'Walter White',
+        }, true);
+    });  
+       this.waitForSelector(x("//*[contains(@class,'todo-text')][normalize-space()='Walter White']"), function() {
+        this.test.assertTextExists("Walter", "Heisenberg is in da house");
     });
+   });
 
     casper.then(function() {
         this.test.comment("Let's take a break");
